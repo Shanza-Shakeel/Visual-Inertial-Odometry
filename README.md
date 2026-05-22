@@ -120,3 +120,97 @@ This project uses a classical geometry-based VO/VIO pipeline. No deep learning, 
 
 ```text
 E = Kᵀ F K
+- **Pose recovery from the essential matrix**
+  - Recovers relative camera rotation and translation direction between frames.
+  - Translation is recovered only up to scale.
+
+- **Chirality / positive depth check**
+  - Used to select the physically valid pose configuration after pose recovery.
+
+- **Sparse triangulation**
+  - Reconstructs sparse 3D landmarks from matched feature correspondences.
+
+- **PnP pose estimation with RANSAC**
+  - Estimates camera pose from 2D–3D correspondences.
+  - Used after initialization for long-term camera tracking.
+
+- **Motion-only bundle adjustment**
+  - Refines the estimated camera pose by minimizing reprojection error.
+  - Improves local trajectory consistency.
+
+---
+
+### Scale Handling and Evaluation
+
+- **Monocular scale ambiguity**
+  - Monocular VO cannot directly recover metric scale.
+  - Estimated trajectories are therefore only correct up to scale.
+
+- **Sim(3) trajectory alignment**
+  - Used to align estimated trajectories with ground truth for evaluation.
+
+```text
+p_aligned = s R p_est + t
+```
+
+where:
+
+- `s` = scale factor  
+- `R` = rotation alignment  
+- `t` = translation offset  
+
+- **Absolute Trajectory Error (ATE)**
+  - Measures global trajectory accuracy after alignment.
+
+- **Relative Pose Error (RPE)**
+  - Measures short-term relative motion consistency.
+
+- **Start–end drift analysis**
+  - Used especially for long sequences where accumulated drift becomes significant.
+
+---
+
+### Visual–Inertial Backend
+
+- **IMU preintegration**
+  - Integrates inertial measurements between selected keyframes.
+  - Produces relative inertial motion constraints:
+
+```text
+ΔR_ij
+Δv_ij
+Δp_ij
+```
+
+- **Sliding-window visual–inertial optimization**
+  - Combines visual constraints and IMU constraints inside nonlinear optimization.
+  - Refines pose, velocity, scale, gravity direction, and bias-related terms.
+
+- **Gravity and scale initialization**
+  - Multiple gravity candidates and scale checks are tested to improve optimization stability.
+
+- **Bias and noise handling**
+  - Simplified IMU bias and noise modeling is used during optimization.
+
+---
+
+### Robustness and Failure Handling
+
+- **Frame skipping**
+  - Used when tracking quality becomes unreliable.
+
+- **Fallback essential matrix estimation**
+  - Used when PnP tracking becomes unstable.
+
+- **Landmark rebuilding**
+  - Reconstructs landmarks when active tracking quality drops.
+
+- **Strong reset logic**
+  - Reinitializes tracking after severe pose estimation failure.
+
+- **Tracking diagnostics**
+  - Logs PnP successes, fallback counts, resets, failed frames, runtime, and FPS statistics.
+
+---
+
+### What This Pipeline Does Not Include
