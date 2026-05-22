@@ -76,6 +76,12 @@ data/
       mav0/
         cam0/
         imu0/
+```
+
+
+
+
+
 ## Techniques Used
 
 This project uses a classical geometry-based VO/VIO pipeline. No deep learning, loop closure, or global SLAM map reuse is used.
