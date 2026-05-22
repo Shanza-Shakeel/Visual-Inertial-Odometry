@@ -52,30 +52,58 @@ Main sequences:
 
 Expected dataset structure:
 
+```## Repository Structure
+
+The repository is organized by sequence. Each sequence folder contains the Python scripts used at different project stages, while the corresponding results folder stores the generated outputs.
+
 ```text
-data/
-  room2/
-    dataset-room2_512_16/
-      mav0/
-        cam0/
-          data/
-          data.csv
-        imu0/
-          data.csv
-        mocap0/
-          data.csv
-
-  corridor3/
-    dataset-corridor3_512_16/
-      mav0/
-        cam0/
-        imu0/
-
-  outdoors5/
-    dataset-outdoors5_512_16/
-      mav0/
-        cam0/
-        imu0/
+.
+├── Room2/
+│   ├── week1.py
+│   ├── week3.py
+│   ├── week5.py
+│   ├── week7.py
+│   ├── week8.py
+│   └── week11.py
+│
+├── room2 Results/
+│   ├── week3_4_improved/
+│   ├── week5_6_strong_reset_debug/
+│   ├── week7_vo_eval/
+│   ├── week8_10_posegraph_vio_rotation_refined/
+│   └── week11_final_evaluation/
+│
+├── corridoor3/corridor3/
+│   ├── week1.py
+│   ├── week3.py
+│   ├── week5.py
+│   ├── week7.py
+│   ├── week8.py
+│   └── week11.py
+│
+├── corridor3 Results/
+│   ├── week3_4_improved/
+│   ├── week5_6_strong_reset_debug/
+│   ├── week7_vo_eval/
+│   ├── week8_10_posegraph_vio_rotation_refined/
+│   └── week11_final_evaluation/
+│
+├── outdoor5/outdoor5/
+│   ├── week1.py
+│   ├── week3.py
+│   ├── week5.py
+│   ├── week7.py
+│   ├── week8.py
+│   └── week11.py
+│
+├── outdoor5 Results/
+│   ├── week3_4_improved/
+│   ├── week5_6_strong_reset_debug/
+│   ├── week7_vo_eval/
+│   ├── week8_10_posegraph_vio_rotation_refined/
+│   └── week11_final_evaluation/
+│
+└── README.md
 ```
 
 
