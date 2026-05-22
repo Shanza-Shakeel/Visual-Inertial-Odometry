@@ -1,0 +1,18 @@
+seed: 0
+
+camera:
+  model: equidistant
+  fx: 190.97847715
+  fy: 190.97330705
+  cx: 254.93170606
+  cy: 256.89744290
+
+vo:
+  orb_features: 2000
+  ransac_threshold: 1.0
+  ratio_test: 0.75
+
+vio:
+  use_imu: true
+  window_size: 60
+  step_size: 40
