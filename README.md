@@ -1,4 +1,4 @@
-# Visual-Inertial-Odometry# From Monocular Visual Odometry to Visual–Inertial Odometry on the TUM VI Dataset
+
 
 This repository contains a classical geometry-based Visual Odometry (VO) and Visual–Inertial Odometry (VIO) pipeline developed and evaluated on the TUM VI dataset.
 
