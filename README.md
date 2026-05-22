@@ -215,3 +215,139 @@ where:
 ---
 
 ### What This Pipeline Does Not Include
+
+This implementation intentionally does not include:
+
+- Deep learning methods
+- CNN-based feature extraction
+- Loop closure
+- Relocalization
+- Global map optimization
+- Full SLAM map reuse
+- Production-level IMU calibration
+
+The project focuses on understanding the core geometry, tracking, optimization, and IMU preintegration components of classical VO/VIO systems.
+
+---
+
+## 5. Evaluation
+
+The evaluation focuses on both quantitative accuracy and qualitative trajectory behavior.
+
+### Quantitative Evaluation
+
+Room2 is evaluated using:
+
+- Absolute Trajectory Error (ATE)
+- Relative Pose Error (RPE)
+- Sim(3) alignment
+- Drift percentage
+
+### Qualitative Evaluation
+
+Corridor3 and Outdoors5 are analyzed using:
+
+- Tracking robustness
+- Failure frequency
+- Reset behavior
+- Drift accumulation
+- Trajectory consistency
+- VO vs VIO comparison
+- Comparison with ORB-SLAM3
+
+---
+
+## 6. Runtime Statistics
+
+| Sequence | Runtime | Processed Frames | FPS |
+|---|---:|---:|---:|
+| Room2 | 198.20 s | 2864 | 14.45 |
+| Corridor3 | 401.34 s | 5775 | 14.39 |
+| Outdoors5 | 968.32 s | 17740 | 18.32 |
+
+---
+
+## 7. Main Observations
+
+- Room2 produced the most stable quantitative evaluation.
+- Corridor3 was difficult because repeated corridor structure weakened feature correspondence stability.
+- Outdoors5 remained locally trackable but accumulated strong global drift over long motion.
+- IMU integration improved local motion consistency but did not fully correct long-term drift.
+- VIO performance depended strongly on VO initialization quality, gravity estimation, and bias handling.
+- The absence of loop closure and global optimization caused accumulated drift over time.
+
+---
+
+## 8. Repository Structure
+
+```text
+.
+├── src/
+│   ├── dataset_loader.py
+│   ├── vo_frontend.py
+│   ├── imu_preintegration.py
+│   ├── vio_backend.py
+│   ├── evaluation.py
+│   └── utils/
+│
+├── data/
+│
+├── results/
+│
+├── figures/
+│
+├── report/
+│
+├── requirements.txt
+└── README.md
+```
+
+---
+
+## 9. Dependencies
+
+Main libraries used:
+
+```text
+numpy
+opencv-python
+scipy
+matplotlib
+pyyaml
+open3d
+```
+
+Install dependencies:
+
+```bash
+pip install numpy opencv-python scipy matplotlib pyyaml open3d
+```
+
+---
+
+## 10. Reproducibility
+
+Experiments were executed using:
+
+- Python 3.x
+- OpenCV
+- NumPy
+- SciPy
+- Windows-based system
+- Intel CPU
+- No GPU acceleration
+
+For reproducibility:
+
+```python
+np.random.seed(0)
+```
+
+The provided TUM VI calibration files were used directly without recalibration.
+
+---
+
+## 11. Authors
+
+- Shanza Shakeel
+- Alina Garcia
