@@ -120,6 +120,7 @@ This project uses a classical geometry-based VO/VIO pipeline. No deep learning, 
 
 ```text
 E = Kᵀ F K
+```
 - **Pose recovery from the essential matrix**
   - Recovers relative camera rotation and translation direction between frames.
   - Translation is recovered only up to scale.
