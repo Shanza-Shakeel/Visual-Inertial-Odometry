@@ -1,0 +1,9 @@
+=== WEEK 7 VO EVALUATION ===
+Estimated poses: 2812
+GT poses: 15477
+Associated poses: 2537
+Sim(3) scale: 0.063581
+ATE RMSE: 0.8392 m
+RPE RMSE delta=10 frames: 0.2869 m
+Start-end drift: 2.5190 m
+Drift percentage: 1.79 %

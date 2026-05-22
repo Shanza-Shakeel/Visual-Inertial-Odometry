@@ -1,0 +1,38 @@
+WEEK 8-10 POSE-GRAPH VIO WITH DATASET IMU NOISE
+================================================
+
+segment: 0:2882
+keyframe_step: 50
+last_keyframe_index: 2811
+scale_bounds: [0.068, 0.083]
+sigma_vis_pos: 0.04
+sigma_end_anchor: 0.03
+sigma_ba_prior: 0.25
+sigma_rot_prior: 0.08
+max_rot_corr: 0.2
+sigma_imu_rot_floor: 0.03
+sigma_imu_vel_floor: 1.0
+sigma_imu_pos_floor: 0.5
+imu_noise_config: {'gyro_noise_density': 0.00016, 'gyro_random_walk': 2.2e-05, 'acc_noise_density': 0.0028, 'acc_random_walk': 0.00086, 'update_rate': 200.0}
+filter_used: True
+filter_type: Savitzky-Golay
+filter_window: 15
+filter_polyorder: 3
+
+vo_ate: 0.839197845
+vo_rpe_trans: 0.496511500
+vo_rpe_rot_deg: 77.432954629
+best_gravity: plus_y
+best_gravity_vector: [0.0, 9.81, 0.0]
+optimized_scale: 0.083000000
+optimized_accel_bias: [0.06856962157104404, -0.11442450696166005, -0.06494234514583337]
+mean_rotation_correction_deg: 4.638800148
+filtered_vio_ate: 0.883185211
+filtered_vio_rpe_trans: 0.352944510
+filtered_vio_rpe_rot_deg: 77.802747278
+filtered_diag_scale: 0.766360182
+filtered_diag_ate: 0.839001808
+filtered_ate_improvement_percent: -5.241596567
+filtered_rpe_improvement_percent: 28.915138898
+raw_trajectory: C:\Users\Shanza\Desktop\Semester 2\Visual-Inertial-Odometry\result\week8_10_posegraph_vio_rotation_refined_imu_noise\posegraph_vio_raw_tum.txt
+filtered_trajectory: C:\Users\Shanza\Desktop\Semester 2\Visual-Inertial-Odometry\result\week8_10_posegraph_vio_rotation_refined_imu_noise\posegraph_vio_filtered_tum.txt
