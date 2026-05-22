@@ -76,3 +76,41 @@ data/
       mav0/
         cam0/
         imu0/
+## Techniques Used
+
+This project uses a classical geometry-based VO/VIO pipeline. No deep learning, loop closure, or global SLAM map reuse is used.
+
+### Visual Frontend
+
+- **ORB feature detection**
+  - Used to extract sparse image keypoints.
+  - Chosen because it is fast and works with binary descriptors.
+
+- **Grid-based feature distribution**
+  - Used to avoid features being concentrated in only one image region.
+  - Helps improve geometric stability.
+
+- **Descriptor matching**
+  - ORB descriptors are matched between frames.
+  - Bad matches are reduced using ratio filtering and geometric checks.
+
+- **KLT optical flow tracking**
+  - Used for short-term feature tracking between consecutive frames.
+  - Helps preserve feature continuity across nearby images.
+
+- **RANSAC outlier rejection**
+  - Used during essential matrix estimation and PnP.
+  - Removes incorrect correspondences before pose estimation.
+
+---
+
+### Monocular VO Geometry
+
+- **Fundamental matrix estimation**
+  - Estimates the epipolar relation between two views.
+
+- **Essential matrix computation**
+  - Computed from the fundamental matrix using camera intrinsics:
+
+```text
+E = Kᵀ F K
