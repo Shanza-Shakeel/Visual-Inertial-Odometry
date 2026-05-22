@@ -1,0 +1,29 @@
+OUTDOORS5 ALL-FRAMES WEEK 8-10 VIO WITH DATASET IMU NOISE
+========================================================
+No full ATE/RPE is reported for Outdoor5; evaluation is start-end + qualitative.
+
+segment: 0:17690
+keyframe_step: 200
+keyframes: 90
+max_nfev: 10
+time_offset: 0.02
+gyro_bias: [0.0007127066744050931, 0.0017547801079048724, 0.00202321772077645]
+gyro_score: 0.090050823
+imu_noise_config: {'gyro_noise_density': 0.00016, 'gyro_random_walk': 2.2e-05, 'acc_noise_density': 0.0028, 'acc_random_walk': 0.00086, 'update_rate': 200.0}
+sigma_imu_rot_floor: 0.05
+sigma_imu_vel_floor: 2.0
+sigma_imu_pos_floor: 2.0
+init_scale_raw: 0.986125945
+init_scale_abs: 0.986125945
+optimized_scale: 0.350000000
+optimized_accel_bias: [0.0, 0.0, 0.0]
+mean_rotation_correction_deg: 0.000000000
+cost0: 57567.987012261
+cost1: 57567.987012261
+raw_drift_m: 0.969957718
+raw_drift_percent: 172.236937446
+filtered_drift_m: 0.969957718
+filtered_drift_percent: 172.236937446
+gt_start_end_length_m: 0.563153138
+raw_trajectory: C:\Users\Admin\vio_project_shanza\result\week8_10_outdoors5_ALL_FAST_IMU_NOISE\outdoors5_vio_raw_tum.txt
+filtered_trajectory: C:\Users\Admin\vio_project_shanza\result\week8_10_outdoors5_ALL_FAST_IMU_NOISE\outdoors5_vio_filtered_tum.txt

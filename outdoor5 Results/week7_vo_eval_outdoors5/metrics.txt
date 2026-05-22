@@ -1,0 +1,11 @@
+=== WEEK 7 VO EVALUATION - OUTDOORS5 ===
+Estimated poses: 17690
+GT poses: 16480
+Associated poses: 2752
+Sim(3) scale: 0.000600
+ATE RMSE: 0.8370 m
+RPE RMSE delta=20: 0.7240 m
+Start-end drift: 0.3637 m
+GT path length: 127.9731 m
+Drift percentage by path length: 0.28 %
+Drift percentage by start-end displacement: 64.43 %
