@@ -1,0 +1,28 @@
+WEEK 7 VO EVALUATION: CORRIDOR3
+================================
+No full ATE/RPE is reported because Corridor3 has only limited/start-end GT.
+
+Estimated poses: 5722
+GT poses: 7186
+Estimated raw path length: 3645.322629
+
+START-END DRIFT
+GT start-end length: 1.085995051 m
+Endpoint scale used: 0.035749993
+Start-end drift: 1.605201183 m
+Start-end drift percent: 147.809254028 %
+Start time mismatch: 0.021043301 s
+End time mismatch: 0.045274019 s
+
+TRACKING STATUS SUMMARY
+Total rows: 5770
+E_FALLBACK_PNP: 25
+INIT0: 1
+INIT_OK: 1
+ITER_PNP_OK: 3277
+ITER_PNP_OK_REBUILD: 2403
+PNP_FAIL_TOTAL: 48
+STRONG_RESET_PNP: 15
+
+Interpretation:
+Corridor3 is evaluated qualitatively using trajectory plausibility, drift behavior, tracking stability, and reset/failure counts.

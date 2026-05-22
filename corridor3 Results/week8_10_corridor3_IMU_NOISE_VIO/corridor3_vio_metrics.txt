@@ -1,0 +1,16 @@
+CORRIDOR3 WEEK 8-10 VIO WITH DATASET IMU NOISE
+================================================
+VIO optimization is unchanged. Frame correction is used only for visualization.
+
+keyframe_step: 120
+time_offset: -0.02
+gyro_bias: [-0.00038302538863719784, 0.003059252769020077, -0.0009550926619640336]
+optimized_scale: 0.190597896
+optimized_accel_bias: [0.0, 0.0, 0.0]
+mean_rotation_correction_deg: 0.000000000
+vo_drift_m: 1.605201183
+raw_vio_drift_m: 1.605201183
+filtered_vio_drift_m: 1.605201183
+gt_start_end_length_m: 1.085995051
+raw_trajectory: C:\Users\Admin\vio_project_shanza\result\corridor3\week8_10_corridor3_IMU_NOISE_VIO\corridor3_vio_raw_tum.txt
+filtered_trajectory: C:\Users\Admin\vio_project_shanza\result\corridor3\week8_10_corridor3_IMU_NOISE_VIO\corridor3_vio_filtered_tum.txt

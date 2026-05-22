@@ -1,0 +1,45 @@
+CORRIDOR3 NO-GT NO-SIM3 EVALUATION
+
+This script compares VO, VIO and ORB-SLAM3 without ground truth and without Sim(3) alignment.
+
+Only start alignment is applied:
+p = p - p[0]
+
+VO/VIO axis correction applied:
+x_new = x
+y_new = -z
+z_new = y
+
+No scale, rotation, or translation fitting is applied after this.
+Therefore, this plot shows the raw trajectory behavior after the coordinate hypothesis.
+
+--- VO axis-fixed no Sim3 ---
+Poses: 5677
+PathLength: 3599.427305
+StartEndDisplacement: 30.296223
+MeanStep: 0.634148574
+MedianStep: 0.520326734
+MaxStep: 5.199981734
+TrackingContinuity: 0.997533
+TrackingFailures: 14
+
+--- VIO axis-fixed no Sim3 ---
+Poses: 5677
+PathLength: 526.694276
+StartEndDisplacement: 5.821353
+MeanStep: 0.092793213
+MedianStep: 0.093617088
+MaxStep: 0.279063030
+TrackingContinuity: 1.000000
+TrackingFailures: 0
+
+--- ORB-SLAM3 no Sim3 ---
+Poses: 5677
+PathLength: 300.716025
+StartEndDisplacement: 1.063654
+MeanStep: 0.052980272
+MedianStep: 0.055342485
+MaxStep: 0.101354765
+TrackingContinuity: 1.000000
+TrackingFailures: 0
+
